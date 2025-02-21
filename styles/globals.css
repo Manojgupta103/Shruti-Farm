@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-cream: #f7f3e3;
+  --color-sage: #a8b39f;
+  --color-forest: #2c4a3e;
+  --color-earth: #6b4c35;
+  --color-sky: #8ecae6;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-forest);
+}
+
+.font-playfair {
+  font-family: var(--font-playfair);
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-forest text-cream py-2 px-6 rounded-full hover:bg-earth transition-colors duration-300 text-lg font-semibold;
+  }
+
+  .btn-secondary {
+    @apply bg-sage text-forest py-2 px-6 rounded-full hover:bg-cream border-2 border-forest transition-colors duration-300 text-lg font-semibold;
+  }
+
+  .section-title {
+    @apply font-playfair text-4xl md:text-5xl font-bold text-forest mb-8 text-center;
+  }
+
+  .card {
+    @apply bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105;
+  }
+}
+
+.parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
