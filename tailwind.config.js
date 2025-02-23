@@ -1,14 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "*.{js,ts,jsx,tsx,mdx}",
-    "app/**/*.{ts,tsx}",
-    "components/**/*.{ts,tsx}",
-  ],
+  content: ["./pages/**/*.{js,jsx}", "./components/**/*.{js,jsx}", "./app/**/*.{js,jsx}", "*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     extend: {
       colors: {
@@ -45,11 +38,11 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        cream: "var(--color-cream)",
-        sage: "var(--color-sage)",
-        forest: "var(--color-forest)",
-        earth: "var(--color-earth)",
-        sky: "var(--color-sky)",
+        cream: "#f7f3e3",
+        sage: "#a8b39f",
+        forest: "#2c4a3e",
+        earth: "#6b4c35",
+        sky: "#8ecae6",
       },
       borderRadius: {
         lg: "var(--radius)",

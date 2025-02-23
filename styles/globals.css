@@ -1,23 +1,9 @@
-@import "tailwindcss";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --color-cream: #f7f3e3;
-  --color-sage: #a8b39f;
-  --color-forest: #2c4a3e;
-  --color-earth: #6b4c35;
-  --color-sky: #8ecae6;
-}
-
 body {
-  background-color: var(--color-cream);
-  color: var(--color-forest);
-}
-
-.font-playfair {
-  font-family: var(--font-playfair);
+  @apply bg-cream text-forest;
 }
 
 @layer components {
@@ -34,18 +20,7 @@ body {
   }
 
   .card {
-    @apply bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105;
+    @apply bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300;
   }
-}
-
-.parallax {
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.text-shadow {
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 

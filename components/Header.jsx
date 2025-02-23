@@ -2,12 +2,11 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import { motion } from "framer-motion"
 import { Menu, X } from "lucide-react"
 
 const navItems = [
-  { name: "Home", href: "/" },  // Full route for "Home"
-  { name: "About", href: "/about" },  // Smooth scroll for section navigation
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
   { name: "Experiences", href: "/experiences" },
   { name: "Gallery", href: "/gallery" },
   { name: "Contact", href: "/contact" },
@@ -17,31 +16,13 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
-  // Handle scroll event to change header style
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50)  // Add shadow when scrolled
+      setScrolled(window.scrollY > 50)
     }
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
-
-  // Function to handle smooth scrolling and routing
-  const scrollToSection = (e, href) => {
-    e.preventDefault()
-
-    // Check if the link is an anchor (for smooth scroll)
-    if (href.startsWith("#")) {
-      const element = document.querySelector(href)
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" })
-      }
-    } else {
-      window.location.href = href  // Full path routing for page navigation
-    }
-
-    setIsOpen(false)  // Close mobile menu after click
-  }
 
   return (
     <header
@@ -53,12 +34,7 @@ export default function Header() {
         </Link>
         <nav className="hidden md:flex space-x-6">
           {navItems.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className="text-forest hover:text-earth transition-colors"
-              onClick={(e) => scrollToSection(e, item.href)}  // Smooth scroll or routing
-            >
+            <Link key={item.name} href={item.href} className="text-forest hover:text-earth transition-colors">
               {item.name}
             </Link>
           ))}
@@ -68,24 +44,20 @@ export default function Header() {
         </button>
       </div>
       {isOpen && (
-        <motion.nav
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          className="md:hidden bg-white py-4"
-        >
+        <nav className="md:hidden bg-white">
           {navItems.map((item) => (
             <Link
               key={item.name}
               href={item.href}
               className="block px-4 py-2 text-forest hover:bg-sage transition-colors"
-              onClick={(e) => scrollToSection(e, item.href)}  // Smooth scroll or routing
+              onClick={() => setIsOpen(false)}
             >
               {item.name}
             </Link>
           ))}
-        </motion.nav>
+        </nav>
       )}
     </header>
   )
 }
+

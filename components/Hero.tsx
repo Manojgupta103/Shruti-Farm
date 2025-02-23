@@ -44,7 +44,7 @@ export default function Hero() {
           transition={{ duration: 0.75 }}
           className="font-playfair text-6xl font-bold mb-6"
         >
-          Welcome to Rustic  Farmhouse
+          Welcome to Rustic Retreat Farmhouse
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 50 }}

@@ -25,21 +25,14 @@ export default function Home() {
   return (
     <>
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <Image
-          src="/images/hero-bg.jpg"
-          alt="Shruti's Farm"
-          layout="fill"
-          objectFit="cover"
-          quality={100}
-          priority
-        />
+        <Image src="/images/hero-bg.jpg" alt="Shruti's Farm" layout="fill" objectFit="cover" quality={100} priority />
         <div className="absolute inset-0 bg-black bg-opacity-50" />
         <div className="relative z-10 text-center text-white">
           <motion.h1
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="font-playfair text-5xl md:text-7xl font-bold mb-6 text-shadow"
+            className="font-playfair text-5xl md:text-7xl font-bold mb-6"
           >
             Welcome to Shruti's Farm
           </motion.h1>
@@ -47,9 +40,9 @@ export default function Home() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl md:text-2xl mb-8 text-shadow"
+            className="text-xl md:text-2xl mb-8"
           >
-            Experience the epitome of rural luxury
+            Experience the beauty of nature and luxury in perfect harmony
           </motion.p>
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.4 }}>
             <Link href="/contact" className="btn-primary">
@@ -88,7 +81,7 @@ export default function Home() {
                 <div className="p-6">
                   <h3 className="font-playfair text-2xl font-bold mb-2">{experience.title}</h3>
                   <p className="text-forest mb-4">
-                    Indulge in the finest {experience.title.toLowerCase()} experience at our Shruti's Farm.
+                    Indulge in the finest {experience.title.toLowerCase()} experience at Shruti's Farm.
                   </p>
                   <Link
                     href="/experiences"
@@ -109,7 +102,7 @@ export default function Home() {
             Ready for a Luxurious Getaway?
           </h2>
           <p className="text-xl mb-8 text-forest max-w-2xl mx-auto">
-            Book your stay now and experience the perfect blend of rustic charm and modern luxury.
+            Book your stay now and experience the perfect blend of rustic charm and modern luxury at Shruti's Farm.
           </p>
           <Link href="/contact" className="btn-primary">
             Contact Us

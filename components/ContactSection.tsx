@@ -46,7 +46,7 @@ export default function ContactSection() {
               </div>
               <div className="flex items-center">
                 <Mail className="w-6 h-6 mr-4 text-green-600" />
-                <p className="text-lg">info@rustic.com</p>
+                <p className="text-lg">info@rusticretreat.com</p>
               </div>
               <div className="flex items-center">
                 <MessageCircle className="w-6 h-6 mr-4 text-green-600" />

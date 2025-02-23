@@ -29,7 +29,7 @@ export default function About() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center" ref={ref}>
           <motion.div variants={fadeInUp} initial="hidden" animate={controls}>
             <p className="text-lg mb-6">
-              Nestled in the heart of pristine countryside, Shruti's Farm offers an unparalleled  that blends
+              Nestled in the heart of pristine countryside, Shruti's Farm offers an unparalleled retreat that blends
               rustic charm with modern opulence. Our meticulously restored 19th-century farmhouse stands as a testament
               to timeless elegance, providing guests with a sanctuary of comfort and sophistication.
             </p>
@@ -47,7 +47,7 @@ export default function About() {
           </motion.div>
           <motion.div variants={fadeInUp} initial="hidden" animate={controls}>
             <Image
-              src="/images/about-farmhouse.jpg"
+              src="/images/about-farm.jpg"
               alt="Shruti's Farm"
               width={600}
               height={400}

@@ -8,16 +8,16 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <h3 className="font-playfair text-2xl font-bold mb-4">Shruti's Farm</h3>
-            <p className="mb-4">Experience the epitome of rural luxury at our exclusive farmhouse .</p>
+            <p className="mb-4">Experience the beauty of nature at our exclusive farm retreat.</p>
             <div className="flex space-x-4">
               <a href="#" className="hover:text-sky transition-colors">
-                <Facebook className="text-white" />
+                <Facebook />
               </a>
               <a href="#" className="hover:text-sky transition-colors">
-                <Instagram className="text-white" />
+                <Instagram />
               </a>
               <a href="#" className="hover:text-sky transition-colors">
-                <Twitter className="text-white" />
+                <Twitter />
               </a>
             </div>
           </div>
@@ -48,13 +48,13 @@ export default function Footer() {
           </div>
           <div>
             <h4 className="font-bold text-lg mb-4">Contact Us</h4>
-            <p className="mb-2">123 Farmhouse Lane, Countryside, CO 12345</p>
+            <p className="mb-2">123 Farm Lane, Countryside, CO 12345</p>
             <p className="mb-2">Phone: (123) 456-7890</p>
-            <p>Email: info@luxuryfarmhouse.com</p>
+            <p>Email: info@shrutisfarm.com</p>
           </div>
         </div>
-        <div className="mt-8 pt-8 border-t border-cream/20 text-center">
-          <p>&copy; {new Date().getFullYear()} Shruti's Farm . All rights reserved.</p>
+        <div className="mt-8 pt-8 border-t border-white/20 text-center">
+          <p>&copy; {new Date().getFullYear()} Shruti's Farm. All rights reserved.</p>
         </div>
       </div>
     </footer>
