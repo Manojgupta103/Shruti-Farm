@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import { motion } from "framer-motion"
 import { Phone, Mail, MapPin } from "lucide-react"
 
 export default function Contact() {
@@ -24,29 +23,14 @@ export default function Contact() {
   return (
     <div className="py-20 bg-cream">
       <div className="container mx-auto px-4">
-        <motion.h1
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="section-title"
-        >
-          Contact Us
-        </motion.h1>
+        <h1 className="section-title">Contact Us</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
+          <div>
             <h2 className="text-2xl font-bold mb-6">Get in Touch</h2>
             {submitted ? (
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded"
-              >
+              <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded">
                 Thank you for your message. We will get back to you soon!
-              </motion.div>
+              </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
@@ -88,24 +72,15 @@ export default function Contact() {
                     className="w-full p-2 border border-forest rounded"
                   ></textarea>
                 </div>
-                <motion.button
-                  type="submit"
-                  className="btn-primary"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
+                <button type="submit" className="btn-primary">
                   Send Message
-                </motion.button>
+                </button>
               </form>
             )}
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-          >
+          </div>
+          <div>
             <h2 className="text-2xl font-bold mb-6">Contact Information</h2>
-            <div className="space-y-4">
+            <div className="space-y-4 mb-8">
               <div className="flex items-center">
                 <Phone className="w-6 h-6 mr-4 text-forest" />
                 <p>(123) 456-7890</p>
@@ -116,24 +91,24 @@ export default function Contact() {
               </div>
               <div className="flex items-center">
                 <MapPin className="w-6 h-6 mr-4 text-forest" />
-                <p>123 Farm Lane, Countryside, CO 12345</p>
+                <p>Shruti’s farm, Navenagar, Alibaug, Maharashtra 402108</p>
               </div>
             </div>
-            <div className="mt-8">
+            <div>
               <h3 className="text-xl font-bold mb-4">Location</h3>
               <div className="aspect-w-16 aspect-h-9">
-                <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14483.326374962482!2d72.98319349298737!3d18.6566636287852!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be873003046cafd%3A0xa89da6234aaa9ddb!2zU2hydXRp4oCZcyBmYXJt!5e1!3m2!1sen!2sin!4v1740345738834!5m2!1sen!2sin" 
-                width="500" 
-                height="400" 
-                style={{ border: 0 }}                
-                allowFullScreen="" 
-                loading="lazy" 
-                referrerPolicy="no-referrer-when-downgrade">
-                </iframe>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10996.861789431021!2d72.99168193754366!3d18.656888761943954!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be873003046cafd%3A0xa89da6234aaa9ddb!2zU2hydXRp4oCZcyBmYXJt!5e1!3m2!1sen!2sin!4v1740433114064!5m2!1sen!2sin" 
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </div>

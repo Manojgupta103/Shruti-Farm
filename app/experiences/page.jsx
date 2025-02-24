@@ -1,8 +1,4 @@
-"use client"
-
-import { useEffect, useRef } from "react"
 import Image from "next/image"
-import { motion, useAnimation, useInView } from "framer-motion"
 
 const experiences = [
   {
@@ -12,10 +8,10 @@ const experiences = [
     image: "dining.jpg",
   },
   {
-    title: "Luxury Spa Treatments",
+    title: "Poolside Perfection",
     description:
-      "Indulge in rejuvenating spa treatments using natural, locally-sourced products. Our expert therapists offer a range of services designed to relax, refresh, and revitalize your body and mind.",
-    image: "spa.jpg",
+      "Enjoy the cool, clear waters of Shruti’s Farm’s luxurious pool, where every stroke leads to serenity and bliss.",
+    image: "pool.jpg",
   },
   {
     title: "Scenic Nature Trails",
@@ -24,61 +20,37 @@ const experiences = [
     image: "trails.jpg",
   },
   {
-    title: "Wine Tasting",
+    title: "Family Celebrations & Gatherings",
     description:
-      "Discover a curated selection of fine wines from our private cellar, guided by our sommelier. Learn about wine pairings and enjoy tastings of local and international vintages.",
-    image: "wine.jpg",
+    "Host your family’s special moments in our charming farmhouse setting. Whether it's a birthday, reunion, or anniversary, enjoy the warmth of the indoors with personalized decorations, catering, and activities for all ages. Create unforgettable memories in a cozy, intimate atmosphere.",
+    image: "family.jpg",
   },
 ]
 
 export default function Experiences() {
-  const controls = useAnimation()
-  const ref = useRef(null)
-  const inView = useInView(ref)
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible")
-    }
-  }, [controls, inView])
-
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-  }
-
   return (
     <div className="py-20 bg-cream">
       <div className="container mx-auto px-4">
-        <motion.h1 variants={fadeInUp} initial="hidden" animate="visible" className="section-title">
-          Unforgettable Experiences at Shruti's Farm
-        </motion.h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12" ref={ref}>
-          {experiences.map((experience, index) => (
-            <motion.div
-              key={experience.title}
-              variants={fadeInUp}
-              initial="hidden"
-              animate={controls}
-              transition={{ delay: index * 0.2 }}
-              className="card"
-            >
-              <Image
-                src={`/images/${experience.image}`}
-                alt={experience.title}
-                width={600}
-                height={400}
-                className="w-full h-64 object-cover rounded-t-lg"
-              />
+        <h1 className="section-title">Unforgettable Experiences at Shruti's Farm</h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          {experiences.map((experience) => (
+            <div key={experience.title} className="card">
+              <div className="relative h-64">
+                <Image
+                  src={`/images/${experience.image}`}
+                  alt={experience.title}
+                  fill
+                  className="object-cover rounded-2xl transition-transform transform group-hover:scale-105 group-hover:translate-y-2 shadow-2xl group-hover:shadow-3xl"
+                />
+              </div>
               <div className="p-6">
                 <h2 className="font-playfair text-2xl font-bold mb-4">{experience.title}</h2>
                 <p className="text-forest">{experience.description}</p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
     </div>
   )
 }
-

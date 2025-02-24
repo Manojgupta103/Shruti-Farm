@@ -13,7 +13,7 @@ export default function Footer() {
               <a href="#" className="hover:text-sky transition-colors">
                 <Facebook />
               </a>
-              <a href="#" className="hover:text-sky transition-colors">
+              <a href="https://www.instagram.com/shruti_farm22/" className="hover:text-sky transition-colors">
                 <Instagram />
               </a>
               <a href="#" className="hover:text-sky transition-colors">
@@ -24,6 +24,11 @@ export default function Footer() {
           <div>
             <h4 className="font-bold text-lg mb-4">Quick Links</h4>
             <ul className="space-y-2">
+              <li>
+                <Link href="/" className="hover:text-sky transition-colors">
+                  Home
+                </Link>
+              </li>
               <li>
                 <Link href="/about" className="hover:text-sky transition-colors">
                   About Us
@@ -48,12 +53,12 @@ export default function Footer() {
           </div>
           <div>
             <h4 className="font-bold text-lg mb-4">Contact Us</h4>
-            <p className="mb-2">123 Farm Lane, Countryside, CO 12345</p>
+            <p className="mb-2">Shruti’s farm, Navenagar, Alibaug, Maharashtra 402108</p>
             <p className="mb-2">Phone: (123) 456-7890</p>
             <p>Email: info@shrutisfarm.com</p>
           </div>
         </div>
-        <div className="mt-8 pt-8 border-t border-white/20 text-center">
+        <div className="mt-5 pt-5 border-t border-white/20 text-center">
           <p>&copy; {new Date().getFullYear()} Shruti's Farm. All rights reserved.</p>
         </div>
       </div>

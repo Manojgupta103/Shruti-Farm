@@ -29,17 +29,27 @@ export default function Header() {
       className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? "bg-white shadow-md" : "bg-transparent"}`}
     >
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <Link href="/" className="font-playfair text-2xl font-bold text-forest">
+        <Link
+          href="/"
+          className={`font-playfair text-2xl font-bold transition-colors ${scrolled ? "text-forest" : "text-zinc-900"} hover:text-forest`}
+        >
           Shruti's Farm
         </Link>
         <nav className="hidden md:flex space-x-6">
           {navItems.map((item) => (
-            <Link key={item.name} href={item.href} className="text-forest hover:text-earth transition-colors">
+            <Link
+              key={item.name}
+              href={item.href}
+              className={`transition-colors ${scrolled ? "text-forest hover:text-sage" : "text-zinc-900 hover:text-earth"}`}
+            >
               {item.name}
             </Link>
           ))}
         </nav>
-        <button className="md:hidden text-forest" onClick={() => setIsOpen(!isOpen)}>
+        <button
+          className={`md:hidden ${scrolled ? "text-forest" : "text-gray-800"}`}
+          onClick={() => setIsOpen(!isOpen)}
+        >
           {isOpen ? <X /> : <Menu />}
         </button>
       </div>
@@ -60,4 +70,3 @@ export default function Header() {
     </header>
   )
 }
-
